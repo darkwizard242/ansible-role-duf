@@ -17,14 +17,14 @@ Available variables are listed below (located in `defaults/main.yml`):
 ```yaml
 duf_app: duf
 duf_desired_state: present
-duf_version: 0.6.2
+duf_version: 0.7.0
 duf_osarch: "linux_amd64"
 
 # For Debian/Ubuntu Family
-duf_debian_url: "https://github.com/muesli/{{ duf_app }}/releases/download/v0.6.2/{{ duf_app }}_{{ duf_version }}_{{ duf_osarch }}.deb"
+duf_debian_url: "https://github.com/muesli/{{ duf_app }}/releases/download/v{{ duf_version }}/{{ duf_app }}_{{ duf_version }}_{{ duf_osarch }}.deb"
 
 # For EL Family
-duf_el_url: "https://github.com/muesli/{{ duf_app }}/releases/download/v0.6.2/{{ duf_app }}_{{ duf_version }}_{{ duf_osarch }}.rpm"
+duf_el_url: "https://github.com/muesli/{{ duf_app }}/releases/download/v{{ duf_version }}/{{ duf_app }}_{{ duf_version }}_{{ duf_osarch }}.rpm"
 ```
 
 ### Variables table:
@@ -33,7 +33,7 @@ Variable          | Description
 ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------
 duf_app           | Defines the app to install i.e. **duf**
 duf_desired_state | Defined to dynamically chose whether to install (i.e. either `present` or `latest`) or uninstall (i.e. `absent`) the package. Defaults to `present`.
-duf_version       | Defined to dynamically fetch the desired version to install. Defaults to: **0.6.2**
+duf_version       | Defined to dynamically fetch the desired version to install. Defaults to: **0.7.0**
 duf_osarch        | Defines os architecture. Used for obtaining the correct type of binaries based on OS System Architecture. Defaults to: **"linux_amd64"**
 duf_debian_url    | Defines URL to download the 'deb' package from for Debian/Ubuntu family systems.
 duf_el_url        | Defines URL to download the 'rpm' package from for EL family systems.
