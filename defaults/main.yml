@@ -3,11 +3,11 @@
 
 duf_app: duf
 duf_desired_state: present
-duf_version: 0.6.2
+duf_version: 0.7.0
 duf_osarch: "linux_amd64"
 
 # For Debian/Ubuntu Family
-duf_debian_url: "https://github.com/muesli/{{ duf_app }}/releases/download/v0.6.2/{{ duf_app }}_{{ duf_version }}_{{ duf_osarch }}.deb"
+duf_debian_url: "https://github.com/muesli/{{ duf_app }}/releases/download/v{{ duf_version }}/{{ duf_app }}_{{ duf_version }}_{{ duf_osarch }}.deb"
 
 # For EL Family
-duf_el_url: "https://github.com/muesli/{{ duf_app }}/releases/download/v0.6.2/{{ duf_app }}_{{ duf_version }}_{{ duf_osarch }}.rpm"
+duf_el_url: "https://github.com/muesli/{{ duf_app }}/releases/download/v{{ duf_version }}/{{ duf_app }}_{{ duf_version }}_{{ duf_osarch }}.rpm"
