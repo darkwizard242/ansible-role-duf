@@ -3,7 +3,7 @@
 
 duf_app: duf
 duf_desired_state: present
-duf_version: 0.7.0
+duf_version: 0.8.0
 duf_osarch: "linux_amd64"
 
 # For Debian/Ubuntu Family
