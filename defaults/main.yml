@@ -3,7 +3,7 @@
 
 duf_app: duf
 duf_desired_state: present
-duf_version: 0.8.0
+duf_version: 0.8.1
 duf_os: "linux"
 duf_arch: "amd64"
 
