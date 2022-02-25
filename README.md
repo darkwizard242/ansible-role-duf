@@ -17,7 +17,7 @@ Available variables are listed below (located in `defaults/main.yml`):
 ```yaml
 duf_app: duf
 duf_desired_state: present
-duf_version: 0.8.0
+duf_version: 0.8.1
 duf_os: "linux"
 duf_arch: "amd64"
 
@@ -34,7 +34,7 @@ Variable          | Description
 ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------
 duf_app           | Defines the app to install i.e. **duf**
 duf_desired_state | Defined to dynamically chose whether to install (i.e. either `present` or `latest`) or uninstall (i.e. `absent`) the package. Defaults to `present`.
-duf_version       | Defined to dynamically fetch the desired version to install. Defaults to: **0.8.0**
+duf_version       | Defined to dynamically fetch the desired version to install. Defaults to: **0.8.1**
 duf_os            | Defines OS type. Used for obtaining the correct type of binaries based on OS. Defaults to: **linux**
 duf_arch          | Defines Architecture type. Used for obtaining the correct type of binaries based on Architecture. Defaults to: **amd64**
 duf_debian_url    | Defines URL to download the 'deb' package from for Debian/Ubuntu family systems.
