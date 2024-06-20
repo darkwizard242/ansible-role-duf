@@ -19,26 +19,34 @@ duf_app: duf
 duf_desired_state: present
 duf_version: 0.8.1
 duf_os: "linux"
-duf_arch: "amd64"
+duf_architecture_map:
+  amd64: amd64
+  arm: arm64
+  x86_64: amd64
+  armv6l: armv6
+  armv7l: armv7
+  aarch64: arm64
+  32-bit: "386"
+  64-bit: amd64
 
 # For Debian/Ubuntu Family
-duf_debian_url: "https://github.com/muesli/{{ duf_app }}/releases/download/v{{ duf_version }}/{{ duf_app }}_{{ duf_version }}_{{ duf_os }}_{{ duf_arch }}.deb"
+duf_debian_url: "https://github.com/muesli/{{ duf_app }}/releases/download/v{{ duf_version }}/{{ duf_app }}_{{ duf_version }}_{{ duf_os }}_{{ duf_architecture_map[ansible_architecture] }}.deb"
 
 # For EL Family
-duf_el_url: "https://github.com/muesli/{{ duf_app }}/releases/download/v{{ duf_version }}/{{ duf_app }}_{{ duf_version }}_{{ duf_os }}_{{ duf_arch }}.rpm"
+duf_el_url: "https://github.com/muesli/{{ duf_app }}/releases/download/v{{ duf_version }}/{{ duf_app }}_{{ duf_version }}_{{ duf_os }}_{{ duf_architecture_map[ansible_architecture] }}.rpm"
 ```
 
 ### Variables table:
 
-Variable          | Description
------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------
-duf_app           | Defines the app to install i.e. **duf**
-duf_desired_state | Defined to dynamically chose whether to install (i.e. either `present` or `latest`) or uninstall (i.e. `absent`) the package. Defaults to `present`.
-duf_version       | Defined to dynamically fetch the desired version to install. Defaults to: **0.8.1**
-duf_os            | Defines OS type. Used for obtaining the correct type of binaries based on OS. Defaults to: **linux**
-duf_arch          | Defines Architecture type. Used for obtaining the correct type of binaries based on Architecture. Defaults to: **amd64**
-duf_debian_url    | Defines URL to download the 'deb' package from for Debian/Ubuntu family systems.
-duf_el_url        | Defines URL to download the 'rpm' package from for EL family systems.
+Variable             | Description
+-------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------
+duf_app              | Defines the app to install i.e. **duf**
+duf_desired_state    | Defined to dynamically chose whether to install (i.e. either `present` or `latest`) or uninstall (i.e. `absent`) the package. Defaults to `present`.
+duf_version          | Defined to dynamically fetch the desired version to install. Defaults to: **0.8.1**
+duf_os               | Defines OS type. Used for obtaining the correct type of binaries based on OS. Defaults to: **linux**
+duf_architecture_map | Defines Architecture type. Used for obtaining the correct type of binaries based on Architecture.
+duf_debian_url       | Defines URL to download the 'deb' package from for Debian/Ubuntu family systems.
+duf_el_url           | Defines URL to download the 'rpm' package from for EL family systems.
 
 ## Dependencies
 

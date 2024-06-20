@@ -5,10 +5,18 @@ duf_app: duf
 duf_desired_state: present
 duf_version: 0.8.1
 duf_os: "linux"
-duf_arch: "amd64"
+duf_architecture_map:
+  amd64: amd64
+  arm: arm64
+  x86_64: amd64
+  armv6l: armv6
+  armv7l: armv7
+  aarch64: arm64
+  32-bit: "386"
+  64-bit: amd64
 
 # For Debian/Ubuntu Family
-duf_debian_url: "https://github.com/muesli/{{ duf_app }}/releases/download/v{{ duf_version }}/{{ duf_app }}_{{ duf_version }}_{{ duf_os }}_{{ duf_arch }}.deb"
+duf_debian_url: "https://github.com/muesli/{{ duf_app }}/releases/download/v{{ duf_version }}/{{ duf_app }}_{{ duf_version }}_{{ duf_os }}_{{ duf_architecture_map[ansible_architecture] }}.deb"
 
 # For EL Family
-duf_el_url: "https://github.com/muesli/{{ duf_app }}/releases/download/v{{ duf_version }}/{{ duf_app }}_{{ duf_version }}_{{ duf_os }}_{{ duf_arch }}.rpm"
+duf_el_url: "https://github.com/muesli/{{ duf_app }}/releases/download/v{{ duf_version }}/{{ duf_app }}_{{ duf_version }}_{{ duf_os }}_{{ duf_architecture_map[ansible_architecture] }}.rpm"
